@@ -1,0 +1,18 @@
+# Example GitHub Actions Workflow (.github/workflows/android.yml)
+name: Build love android
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Build Android APK
+        uses: love-actions/love-actions-android@v2
+        with:
+          app-name: "My Love Game"
+          bundle-id: "org.love2d.my_game"
+          icon-specifier: "icon.png"
+          love-ref: "11.5" # LÖVE version
+          love-package: "./game.love" # Your game file

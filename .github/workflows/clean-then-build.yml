@@ -16,6 +16,8 @@ jobs:
           haskell: true
           tool-cache: true
           docker-images: true
+
+      - name: check space
         run: |
           df -h
 
